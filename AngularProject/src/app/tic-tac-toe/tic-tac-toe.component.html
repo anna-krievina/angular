@@ -1,0 +1,26 @@
+<div id="board">
+  <table id="boardTable" *ngIf="board">
+    <tr>
+      <td *ngFor="let i of [0,1,2]" class="ticCell" [style.color]="board[i].Value === 'O' ? 'white' : ''" style="border-color: black" (click)="move(i)">
+        {{ board[i].Value }}
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let i of [3,4,5]" class="ticCell" [style.color]="board[i].Value === 'O' ? 'white' : ''" style="border-color: black" (click)="move(i)">
+        {{ board[i].Value }}
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let i of [6,7,8]" class="ticCell" [style.color]="board[i].Value === 'O' ? 'white' : ''" style="border-color: black" (click)="move(i)">
+        {{ board[i].Value }}
+      </td>
+    </tr>
+  </table>
+  <br />
+  <div *ngIf="gameOver">
+    <p id="resultField">
+      Game over!
+      <input class="resetButton" type="button" value="reset" (click)="clearBoard()" />
+    </p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <div id="resultFieldDiv">
+    <input id="calcResultField" maxlength="22" type="text" readonly="readonly" value="{{result}}" />
+  </div>
+  <input type="button" class="calcButton calcNumber" value="{{add}}" (click)="calculate(add)"/>
+  <input type="button" class="calcButton calcNumber" value="{{subtract}}" (click)="calculate(subtract)"/>
+  <input type="button" class="calcButton calcNumber" value="{{multipy}}" (click)="calculate(multipy)"/>
+  <input type="button" class="calcButton calcNumber" value="{{divide}}" (click)="calculate(divide)"/><br />
+
+  <input *ngFor="let i of ['1', '2', '3']" type="button" class="calcButton calcNumber" [value]="i" (click)="calculate(i)" />
+  <input type="button" class="calcButton calcNumber" value="{{undo}}" (click)="calculate(undo)" /><br />
+
+  <input *ngFor="let i of ['4', '5', '6']" type="button" class="calcButton calcNumber" [value]="i" (click)="calculate(i)" />
+  <input type="button" class="calcButton calcNumber" value="{{reset}}" (click)="calculate(reset)" /><br />
+
+  <input *ngFor="let i of ['7', '8', '9']" type="button" class="calcButton calcNumber" [value]="i" (click)="calculate(i)" />
+  <input type="button" class="calcButton calcNumber" value="{{equals}}" (click)="calculateResult(result)" /><br />
+
+  <input type="button" class="calcButton calcAction" value="{{negate}}" (click)="negateResult(result)" />
+  <input type="button" class="calcButton calcAction" value="0" (click)="calculate('0')" />
+  <input type="button" class="calcButton calcAction" value="{{comma}}" (click)="calculate(comma)" style="margin-right: 50px" />
+</div>
