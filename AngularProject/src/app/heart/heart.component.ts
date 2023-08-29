@@ -13,8 +13,15 @@ export class HeartComponent implements AfterViewInit {
   public canvasSizeY: number = 300;
   public canvasId: string = "heartCanvas"
   private colorArray: string[] = ["blue", "blue_gray", "dark_teal", "gold", "light_gray", "pink", "purple"];
+  private imgArray: InstanceType<typeof Image>[] = [];
 
   constructor() {
+    let imgArray = this.imgArray;
+    this.colorArray.forEach(function (color) {
+      let img = new Image();
+      img.src = '../assets/img/heart/' + color + '.png';
+      imgArray.push(img);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -43,9 +50,7 @@ export class HeartComponent implements AfterViewInit {
       for (var j = 0; j < subrowCount; j++) {
         subrowx = subrowx + 25;
         subrowy = subrowy - 25;
-        let color = this.colorArray[Math.floor(Math.random() * 7)];
-        let img = new Image();
-        img.src = '../assets/img/heart/' + color +'.png';;
+        let img = this.imgArray[Math.floor(Math.random() * this.imgArray.length)];
         ctx.drawImage(img, subrowx, subrowy);
       }
       rowx = rowx - 25;

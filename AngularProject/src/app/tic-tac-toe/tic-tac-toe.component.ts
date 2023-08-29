@@ -14,6 +14,12 @@ export class TicTacToeComponent {
   private boardArraySize: number = 3;
   private winCombinationOuter: number = 8;
   private winCombinationInner: number = 3;
+  /*
+    * the game board for tic tac toe is laid out like this:
+    * 1|2|3
+    * 4|5|6
+    * 7|8|9
+    */
   private winCombination: number[][] = [  [ 1, 5, 9 ], [ 3, 5, 7 ], [ 1, 2, 3 ], [ 4, 5, 6 ],
 [ 7, 8, 9 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 3, 6, 9 ] ];
 
@@ -41,13 +47,6 @@ export class TicTacToeComponent {
       this.gameOver = this.CalculateGameOver();
     }
   }
-
-  /*
-    * the game board for tic tac toe is laid out like this:
-    * 1|2|3
-    * 4|5|6
-    * 7|8|9
-    */
 
   clearBoard() {
     const BoardSize: number = 9;
@@ -98,7 +97,7 @@ export class TicTacToeComponent {
     }
     if (returnId == -1) {
       // if no win conditions are found, searches for available free space. order is determined by which position I think is the best
-      let possibleMoves: number[] = [ 4, 0, 8, 5, 3 ];
+      let possibleMoves: number[] = [ 4, 0, 8, 5, 3, 6, 7 ];
       for (let i = 0; i < possibleMoves.length; i++)
       {
         if (!this.board[possibleMoves[i]].Value) {
