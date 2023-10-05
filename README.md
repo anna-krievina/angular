@@ -1,5 +1,5 @@
-# AngularSolution
+# Angular
 
-Remake of another hobby project to learn the basics of Angular and Typescript.
+Remake of Angular-hobby to create a fully static website to that it can be hosted.
 
-Made in Visual studio 2022, run locally.
+published here: https://angular-08p7.onrender.com/
