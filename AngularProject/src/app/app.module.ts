@@ -10,6 +10,7 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SakuraComponent } from './sakura/sakura.component';
 import { HeartComponent } from './heart/heart.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { Match3Component } from './match3/match3.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     TicTacToeComponent,
     SakuraComponent,
     HeartComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    Match3Component
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -30,6 +32,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
       { path: 'sakura', component: SakuraComponent },
       { path: 'heart', component: HeartComponent },
       { path: 'calculator', component: CalculatorComponent },
+      { path: 'match3', component: Match3Component },
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ]),

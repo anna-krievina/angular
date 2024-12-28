@@ -1,0 +1,7 @@
+<table id="boardTable" class="unselectable">
+  <tr *ngFor="let row of board; let i = index">
+    <td *ngFor="let cell of row; let j = index" class="cell" (click)="select(i, j)" id="{{i}},{{j}}">
+      {{ board[i][j] }}
+    </td>
+  </tr>
+</table>

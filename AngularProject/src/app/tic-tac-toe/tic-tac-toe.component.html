@@ -1,5 +1,5 @@
 <div id="board">
-  <table id="boardTable" *ngIf="board">
+  <table id="boardTable" *ngIf="board" class="unselectable">
     <tr>
       <td *ngFor="let i of [0,1,2]" class="ticCell" [style.color]="board[i].Value === 'O' ? 'white' : ''" style="border-color: black" (click)="move(i)">
         {{ board[i].Value }}
